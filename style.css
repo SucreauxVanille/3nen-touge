@@ -93,6 +93,7 @@ body {
 }
 /* 地面 */
 #ground {
+  position: absolute;
   width: 260%;
   height: 900px;
 
