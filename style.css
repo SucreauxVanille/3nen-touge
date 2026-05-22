@@ -95,10 +95,10 @@ body {
 #ground {
   position: absolute;
 
-  width: 100%;
+  width: 200%;
   height: 240px;
 
-  left: 30%;
+  left: -30%;
   bottom: -40px;
 
   background-image: url("slope.gif");
