@@ -85,26 +85,30 @@ body {
   position: absolute;
   inset: 0;
 
-  background-image: url("img/slope.gif");
+  background-image: url("img/sky.gif");
   background-repeat: repeat-x;
   background-size: cover;
 
   z-index: 1;
 }
-
 /* 地面 */
 #ground {
   position: absolute;
 
   width: 200%;
-  height: 220px;
+  height: 240px;
 
   left: -20%;
-  bottom: -60px;
+  bottom: -40px;
 
-  background: #5c7c3a;
+  background-image: url("img/slope.gif");
+  background-repeat: repeat-x;
 
-  transform: rotate(-12deg);
+  background-size: auto 100%;
+
+  image-rendering: pixelated;
+
+  transform: rotate(-3deg);
 
   z-index: 2;
 }
