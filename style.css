@@ -95,11 +95,11 @@ body {
 #ground {
   position: absolute;
 
-  width: 200%;
-  height: 300px;
+  width: 220%;
+  height: 420px;
 
-  left: -30%;
-  bottom: -60px;
+  left: -40%;
+  bottom: -180px;
 
   background-image: url("slope.gif");
   background-repeat: repeat-x;
