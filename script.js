@@ -1,7 +1,10 @@
 // =====================
 // 要素取得
 // =====================
+const startScreen = document.getElementById("startScreen");
+const startButton = document.getElementById("startButton");
 
+const timerText = document.getElementById("timer");
 const player = document.getElementById("player");
 const scoreText = document.getElementById("score");
 
@@ -10,15 +13,16 @@ const scoreText = document.getElementById("score");
 // GIF設定
 // =====================
 
-const WALK_GIF = "img/walk.gif";
-const FALL_GIF = "img/fall.gif";
-const STAND_GIF = "img/stand.gif";
+const WALK_GIF = "walk.gif";
+const FALL_GIF = "fall.gif";
+const STAND_GIF = "stand.gif";
 
 
 // =====================
 // 状態管理
 // =====================
-
+let gameStarted = false;
+let timer = 20;
 let state = "walk";
 let score = 0;
 
@@ -29,6 +33,17 @@ let score = 0;
 
 player.src = WALK_GIF;
 
+//ゲーム開始
+startButton.addEventListener("click", startGame);
+function startGame() {
+
+  gameStarted = true;
+
+  startScreen.classList.add("hidden");
+
+  startTimer();
+
+}
 
 // =====================
 // ランダム時間
@@ -39,6 +54,26 @@ function randomTime() {
   return 800 + Math.random() * 400;
 }
 
+//タイマー
+function startTimer() {
+
+  const interval = setInterval(() => {
+
+    timer--;
+
+    timerText.textContent = timer;
+
+    if (timer <= 0) {
+
+      clearInterval(interval);
+
+      endGame();
+
+    }
+
+  }, 1000);
+
+}
 
 // =====================
 // 転倒処理
@@ -48,7 +83,7 @@ player.addEventListener("click", () => {
 
   // 歩行中以外は無効
   if (state !== "walk") return;
-
+  if (!gameStarted) return;
   // 状態変更
   state = "fall";
 
@@ -92,3 +127,14 @@ player.addEventListener("click", () => {
   }, randomTime());
 
 });
+
+//終了
+function endGame() {
+
+  gameStarted = false;
+
+  state = "stop";
+
+  console.log("ゲーム終了");
+
+}
