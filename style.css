@@ -107,7 +107,24 @@ body {
   transform: rotate(8deg);
   z-index: 2;
 }
+#road {
+  position: absolute;
 
+  width: 220%;
+  height: 120px;
+
+  left: -40%;
+  bottom: 120px;
+
+  background: #b88c5a;
+
+  border-top: 6px solid #d8b48a;
+  border-bottom: 6px solid #8c6840;
+
+  transform: rotate(8deg);
+
+  z-index: 5;
+}
 /* 主人公 */
 #player {
   position: absolute;
