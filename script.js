@@ -7,7 +7,7 @@ const startButton = document.getElementById("startButton");
 const timerText = document.getElementById("timer");
 const player = document.getElementById("player");
 const scoreText = document.getElementById("score");
-
+const message = document.getElementById("message");
 
 // =====================
 // GIF設定
@@ -25,7 +25,7 @@ let gameStarted = false;
 let timer = 20;
 let state = "walk";
 let score = 0;
-
+let gameEnded = false;
 
 // =====================
 // 初期表示
@@ -129,12 +129,41 @@ player.addEventListener("click", () => {
 });
 
 //終了
+document.addEventListener("click", () => {
+
+  if (!gameEnded) return;
+
+  resetGame();
+
+});
 function endGame() {
 
   gameStarted = false;
+  gameEnded = true;
 
   state = "stop";
 
-  console.log("ゲーム終了");
+  message.textContent = "タップで再挑戦";
+
+}
+
+//リセット
+function resetGame() {
+
+  gameEnded = false;
+
+  score = 0;
+  timer = 20;
+
+  scoreText.textContent = score;
+  timerText.textContent = timer;
+
+  state = "walk";
+
+  player.src = WALK_GIF;
+
+  message.textContent = "！ころべ！";
+
+  startScreen.classList.remove("hidden");
 
 }
