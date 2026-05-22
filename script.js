@@ -53,7 +53,7 @@ function startGame() {
 // =====================
 
 function randomTime() {
-  return 400 + Math.random() * 700;
+  return 300 + Math.random() * 700;
 }
 
 //タイマー
