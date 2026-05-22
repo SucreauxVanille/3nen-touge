@@ -115,12 +115,9 @@ body {
   height: 120px;
 
   left: -40%;
-  bottom: 120px;
+  bottom: 100px;
 
   background: #b88c5a;
-
-  border-top: 6px solid #d8b48a;
-  border-bottom: 6px solid #8c6840;
 
   transform: rotate(8deg);
 
