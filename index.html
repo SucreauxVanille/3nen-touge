@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>三年とうげ</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ゲーム全体 -->
+  <div id="game">
+
+    <!-- UI -->
+    <header id="ui">
+
+      <!-- スコア -->
+      <div id="scoreBox">
+        SCORE :
+        <span id="score">0</span> 年
+      </div>
+
+      <!-- メッセージ -->
+      <div id="message">
+        ！ころべ！
+      </div>
+
+      <!-- タイマー（必要なら後で使用） -->
+      <div id="timerBox">
+        残り :
+        <span id="timer">30</span>
+      </div>
+
+    </header>
+
+
+    <!-- メイン画面 -->
+    <main id="stage">
+
+      <!-- 背景スクロール用 -->
+      <div id="slope"></div>
+
+      <!-- 地面 -->
+      <div id="ground"></div>
+
+      <!-- 主人公 -->
+      <img
+        id="player"
+        src="img/walk.gif"
+        alt="おじいさん"
+      />
+
+    </main>
+
+
+    <!-- 開始画面（必要なら） -->
+    <div id="startScreen">
+
+      <h1>三年とうげ</h1>
+
+      <p>
+        おじいさんを<br>
+        ころばせよう！
+      </p>
+
+      <button id="startButton">
+        START
+      </button>
+
+    </div>
+
+
+    <!-- 終了画面（必要なら） -->
+    <div id="resultScreen" class="hidden">
+
+      <h2>おしまい</h2>
+
+      <p>
+        のびた寿命 :
+        <span id="finalScore">0</span>
+        年
+      </p>
+
+      <button id="retryButton">
+        もう一度
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
