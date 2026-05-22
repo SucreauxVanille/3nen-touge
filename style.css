@@ -93,23 +93,18 @@ body {
 }
 /* 地面 */
 #ground {
-  position: absolute;
+  width: 260%;
+  height: 900px;
 
-  width: 220%;
-  height: 420px;
-
-  left: -40%;
-  bottom: -180px;
+  left: -60%;
+  bottom: -620px;
 
   background-image: url("slope.gif");
-  background-repeat: repeat-x;
-
-  background-size: auto 100%;
+  background-repeat: repeat;
 
   image-rendering: pixelated;
 
   transform: rotate(8deg);
-
   z-index: 2;
 }
 
