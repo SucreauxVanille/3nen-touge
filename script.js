@@ -8,7 +8,9 @@ const timerText = document.getElementById("timer");
 const player = document.getElementById("player");
 const scoreText = document.getElementById("score");
 const message = document.getElementById("message");
+const ground = document.getElementById("ground");
 
+let groundX = 0;
 // =====================
 // GIF設定
 // =====================
@@ -72,6 +74,22 @@ function startTimer() {
     }
 
   }, 1000);
+
+}
+
+//背景ループ
+function gameLoop() {
+
+  // 歩行中だけスクロール
+  if (gameStarted && state === "walk") {
+
+    groundX -= 4;
+
+    ground.style.backgroundPositionX = `${groundX}px`;
+
+  }
+
+  requestAnimationFrame(gameLoop);
 
 }
 
@@ -167,3 +185,5 @@ function resetGame() {
   startScreen.classList.remove("hidden");
 
 }
+
+gameLoop();
