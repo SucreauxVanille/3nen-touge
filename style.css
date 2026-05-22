@@ -95,10 +95,10 @@ body {
 #ground {
   position: absolute;
 
-  width: 200%;
+  width: 100%;
   height: 240px;
 
-  left: -20%;
+  left: 30%;
   bottom: -40px;
 
   background-image: url("slope.gif");
@@ -108,7 +108,7 @@ body {
 
   image-rendering: pixelated;
 
-  transform: rotate(-3deg);
+  transform: rotate(10deg);
 
   z-index: 2;
 }
