@@ -161,7 +161,7 @@ function endGame() {
 
   state = "stop";
 
-  message.textContent = "タップで再挑戦";
+  message.textContent = "もういちどあそぶ";
 
 }
 
