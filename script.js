@@ -46,6 +46,9 @@ function startGame() {
 
   startScreen.classList.add("hidden");
 
+  message.textContent = "！ころべ！";
+  message.classList.add("blink");
+
   startTimer();
 
 }
@@ -108,6 +111,9 @@ player.addEventListener("click", () => {
   // 状態変更
   state = "fall";
 
+message.textContent = "ころんだ！";
+message.classList.remove("blink");
+
   // スコア加算
   score += 3;
   scoreText.textContent = score;
@@ -125,8 +131,11 @@ player.addEventListener("click", () => {
   setTimeout(() => {
 
     state = "stand";
+state = "stand";
 
-    player.src = STAND_GIF;
+message.textContent = "";
+
+player.src = STAND_GIF;
 
     console.log("立ち上がり中");
 
@@ -137,10 +146,12 @@ player.addEventListener("click", () => {
 
     setTimeout(() => {
 
-      state = "walk";
+state = "walk";
 
-      player.src = WALK_GIF;
+message.textContent = "！ころべ！";
+message.classList.add("blink");
 
+player.src = WALK_GIF;
       console.log("歩行再開");
 
     }, randomTime());
@@ -163,13 +174,11 @@ function endGame() {
 
   state = "stop";
 
-  // メッセージ変更
   message.textContent = "おしまい";
+  message.classList.remove("blink");
 
-  // 最終スコア表示
   finalScore.textContent = score;
 
-  // リザルト表示
   resultScreen.classList.remove("hidden");
 
 }
