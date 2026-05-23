@@ -9,6 +9,9 @@ const player = document.getElementById("player");
 const scoreText = document.getElementById("score");
 const message = document.getElementById("message");
 const ground = document.getElementById("ground");
+const resultScreen = document.getElementById("resultScreen");
+const retryButton = document.getElementById("retryButton");
+const finalScore = document.getElementById("finalScore");
 
 let groundX = 0;
 // =====================
@@ -27,7 +30,7 @@ let gameStarted = false;
 let timer = 20;
 let state = "walk";
 let score = 0;
-let gameEnded = false;
+
 
 // =====================
 // 初期表示
@@ -157,33 +160,46 @@ document.addEventListener("click", () => {
 function endGame() {
 
   gameStarted = false;
-  gameEnded = true;
 
   state = "stop";
 
-  message.textContent = "もういちどあそぶ";
+  // メッセージ変更
+  message.textContent = "おしまい";
+
+  // 最終スコア表示
+  finalScore.textContent = score;
+
+  // リザルト表示
+  resultScreen.classList.remove("hidden");
 
 }
 
 //リセット
+retryButton.addEventListener("click", resetGame);
 function resetGame() {
 
-  gameEnded = false;
-
+  // 数値リセット
   score = 0;
   timer = 20;
 
+  // 表示更新
   scoreText.textContent = score;
   timerText.textContent = timer;
 
+  // 状態初期化
   state = "walk";
 
+  // GIF戻す
   player.src = WALK_GIF;
 
+  // メッセージ戻す
   message.textContent = "！ころべ！";
 
+  // リザルト非表示
+  resultScreen.classList.add("hidden");
+
+  // スタート画面表示
   startScreen.classList.remove("hidden");
 
 }
-
 gameLoop();
