@@ -87,7 +87,7 @@ function startTimer() {
 function gameLoop() {
 
   // 歩行中だけスクロール
-  if (gameStarted && state === "walk") {
+if (state === "walk")  {
 
     groundX -= 4;
 
@@ -171,8 +171,6 @@ document.addEventListener("click", () => {
 function endGame() {
 
   gameStarted = false;
-
-  state = "stop";
 
   message.textContent = "おしまい";
   message.classList.remove("blink");
