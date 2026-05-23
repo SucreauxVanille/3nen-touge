@@ -67,6 +67,26 @@ body {
 
   text-shadow: 2px 2px 0 #000;
 }
+/* 点滅 */
+.blink {
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
 
 /* ステージ */
 #stage {
