@@ -55,11 +55,11 @@ function startGame() {
 
 // =====================
 // ランダム時間
-// 0.4〜1.1秒
+// 0.2〜1.0秒
 // =====================
 
 function randomTime() {
-  return 300 + Math.random() * 700;
+  return 200 + Math.random() * 800;
 }
 
 //タイマー
